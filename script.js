@@ -1,7 +1,10 @@
 let corgreen ='0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F'
-let choices = []
-let total = [] // voltar undefined se precisar
+let choices = [undefined,undefined,undefined]
+let total = [undefined,undefined,undefined] // voltar undefined se precisar
 let precoFinal = 0 
+let telaDeConfirmacao = document.querySelector('.tela-de-confirmacao')
+let pedido = document.querySelector('.pedido')
+let informsCliente= [undefined,undefined]
 function liberarbutton() {
     let button = document.querySelector('.button')
         button.style.backgroundColor = '#32B72F';
@@ -81,8 +84,9 @@ function selectsobremesa(item) {
     }
 }
 
-function sendOrder(informsCliente) {
-   
+function sendOrder() {
+   console.log(choices)
+   console.log(precoFinal);
     const message = 'Olá, gostaria de fazer o pedido:'
     +'\n - Prato: '     +   choices[0]
     +'\n - Bebida: '    +   choices[1]
@@ -98,9 +102,35 @@ function sendOrder(informsCliente) {
 }
 
 function infoCliente() {
+    // informações do cliente para o pedido(nome e endereço)
     let nomeCliente = prompt('Por favor, informe-nos seu nome:')
     let enderecoCliente = prompt('Para finalizarmos, informe seu endereço: ')
-    let informsCliente= [nomeCliente,enderecoCliente]
-    sendOrder(informsCliente)
+    informsCliente= [nomeCliente,enderecoCliente]
 
+    // passando infs pra tela de confirmação verde
+    telaDeConfirmacao.style.display = 'flex'
+
+    // comida
+    let pedidocomida = document.querySelector('.nameprato')
+    pedidocomida.innerHTML = choices[0]
+    let valorcomida = document.querySelector('.valorprato')
+    valorcomida.innerHTML = total[0]
+    // bebida
+    let pedidobebida = document.querySelector('.namebebida')
+    pedidobebida.innerHTML = choices[1]
+    let valorbebida = document.querySelector('.valorbebida')
+    valorbebida.innerHTML = total[1]
+    // sobremesa
+
+    let pedidosobremesa = document.querySelector('.namesobremesa')
+    pedidosobremesa.innerHTML = choices[2]
+    let valorsobremesa = document.querySelector('.valorsobremesa')
+    valorsobremesa.innerHTML= total[2]
+
+    // total
+    let totalgreen = document.querySelector('.valortotal')
+    totalgreen.innerHTML = precoFinal
+}
+function exit() {
+    telaDeConfirmacao.style.display = 'none'
 }
