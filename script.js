@@ -5,6 +5,8 @@ let precoFinal = 0
 let telaDeConfirmacao = document.querySelector('.tela-de-confirmacao')
 let pedido = document.querySelector('.pedido')
 let informsCliente= [undefined,undefined]
+let totalcomvirgula
+
 function liberarbutton() {
     let button = document.querySelector('.button')
         button.style.backgroundColor = '#32B72F';
@@ -121,20 +123,20 @@ function telaVerde() {
     let pedidocomida = document.querySelector('.nameprato')
     pedidocomida.innerHTML = choices[0]
     let valorcomida = document.querySelector('.valorprato')
-    valorcomida.innerHTML = total[0]
+    valorcomida.innerHTML = total[0].toString().replace('.',',')
     // bebida
     let pedidobebida = document.querySelector('.namebebida')
     pedidobebida.innerHTML = choices[1]
     let valorbebida = document.querySelector('.valorbebida')
-    valorbebida.innerHTML = total[1]
+    valorbebida.innerHTML = total[1].toString().replace('.',',')
     // sobremesa
 
     let pedidosobremesa = document.querySelector('.namesobremesa')
     pedidosobremesa.innerHTML = choices[2]
     let valorsobremesa = document.querySelector('.valorsobremesa')
-    valorsobremesa.innerHTML= total[2]
+    valorsobremesa.innerHTML= total[2].toString().replace('.',',')
 
     // total
     let totalgreen = document.querySelector('.valortotal')
-    totalgreen.innerHTML = precoFinal
+    totalgreen.innerHTML = precoFinal.toString().replace('.',',')
 }
