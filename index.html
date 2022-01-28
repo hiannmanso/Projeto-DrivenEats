@@ -35,7 +35,7 @@
                     </div>
                   
                 </div>
-                <div class="button1" onclick="sendOrder()">Tudo certo,pode pedir!</div>
+                <div class="button1" onclick="infoCliente()">Tudo certo,pode pedir!</div>
                 <div class="button2" onclick="exit()">Cancelar</div>
             </div>
         </div>
@@ -47,23 +47,26 @@
             <div class="choice">
                 <p>Primeiro,seu prato</p>
                 <div class="options">
-                    <div class="item"onclick="selectprato(this)">
+                    <div class="item escondido"onclick="selectprato(this)">
                         <img src="images/imagem 1.png" alt="">
                         <h1>Carne com batata</h1>
                         <h2>Um pouco de batata, um pouco de carne</h2>
                         <h3>R$ <span class='value'>14,90</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item"onclick="selectprato(this)">
+                    <div class="item escondido"onclick="selectprato(this)">
                         <img src="images/image 2.jpg" alt="">
                         <h1>Hambúrger</h1>
                         <h2>Hambúrger com fritas delicioso</h2>
                         <h3>R$ <span class='value'>22,28</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item"onclick="selectprato(this)">
+                    <div class="item escondido"onclick="selectprato(this)">
                         <img src="images/image 3.jpg" alt="">
                         <h1>Tacos</h1>
                         <h2>Tacos recheados, gostosinhos</h2>
                         <h3>R$ <span class='value'>17,35</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -71,23 +74,26 @@
             <div class="choice">
                 <p>Agora,sua bebida</p>
                 <div class="options">
-                    <div class="item" onclick="selectbebida(this)">
+                    <div class="item escondido" onclick="selectbebida(this)">
                         <img src="images/bebida1.jpg" alt="">
                         <h1>Refrigerante</h1>
                         <h2>Lata 350ml</h2>
                         <h3>R$ <span class='value'>4,90</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item" onclick="selectbebida(this)">
+                    <div class="item escondido" onclick="selectbebida(this)">
                         <img src="images/bebida2.jpg" alt="">
                         <h1>Suco 350ml</h1>
                         <h2></h2>
                         <h3>R$ <span class='value'>5,90</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item" onclick="selectbebida(this)">
+                    <div class="item escondido" onclick="selectbebida(this)">
                         <img src="images/bebida3.jpg" alt="">
                         <h1>Brahminha latão</h1>
                         <h2></h2>
                         <h3>R$ <span class='value'>3,90</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
             </div>
@@ -95,33 +101,38 @@
             <div class="choice">
                 <p>Por fim,sua sobremesa</p>
                 <div class="options">
-                    <div class="item"onclick="selectsobremesa(this)">
+                    <div class="item escondido"onclick="selectsobremesa(this)">
                         <img src="images/sobremesa1.png" alt="">
                         <h1>Pudimzin</h1>
                         <h2>Apenas pudim</h2>
                         <h3>R$ <span class= 'value'>7,90</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item"onclick="selectsobremesa(this)">
+                    <div class="item escondido"onclick="selectsobremesa(this)">
                         <img src="images/sobremesa2.png" alt="">
                         <h1>Petit gateau</h1>
                         <h2>bolinho macio</h2>
                         <h3>R$ <span class='value'>8,00</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item"onclick="selectsobremesa(this)">
+                    <div class="item escondido"onclick="selectsobremesa(this)">
                         <img src="images/sobremesa3.png" alt="">
                         <h1>Sorvetinhoo</h1>
                         <h2>melhor opção</h2>
                         <h3>R$ <span class='value'>5,75</span></h3>
+                        <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
             </div>
         </div>
         <footer>
-            <div class="button" onclick="infoCliente()">
+            <div class="button" onclick="telaVerde()">
                 <p>Selecione os 3 itens para fechar o pedido</p>
             </div>
         
         </footer>
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <script src="script.js"></script>
     </body>
 

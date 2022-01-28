@@ -9,8 +9,7 @@ function liberarbutton() {
     let button = document.querySelector('.button')
         button.style.backgroundColor = '#32B72F';
         button.innerHTML = '<p> Fechar pedido </p>'
-        // console.log(choices);   
-
+     
     precoFinal = (total[0]+total[1]+total[2]).toFixed(2)
 }
 
@@ -19,8 +18,10 @@ function selectprato(item) {
     let apagarItem = document.getElementsByClassName('item')
     for (let index = 0; index < 3; index++) {
         apagarItem[index].style.boxShadow = 'none'
+        apagarItem[index].classList.add('escondido')
     }
     item.style.boxShadow = corgreen; 
+    item.classList.remove('escondido')
 
     // salvar nome do item e valor
     let nomeItems= item.getElementsByTagName('h1')
@@ -28,8 +29,7 @@ function selectprato(item) {
 
      let valoritem= item.getElementsByClassName('value')
      total[0] = Number(valoritem[0].innerHTML.replace(',','.'))
-    //  console.log(choices);
-    //  console.log(total);
+
      // teste para validar button
     if (choices[0] != undefined && choices[1] != undefined && choices[2] != undefined) {
         liberarbutton()
@@ -42,8 +42,10 @@ function selectbebida(item) {
     let apagarItem = document.getElementsByClassName('item')
     for (let index = 3; index < 6; index++) {
         apagarItem[index].style.boxShadow = 'none'
+        apagarItem[index].classList.add('escondido')
     }
     item.style.boxShadow = corgreen; 
+    item.classList.remove('escondido')
 
     // salvar nome do item e valor
      let nomeItems= item.getElementsByTagName('h1')
@@ -52,8 +54,7 @@ function selectbebida(item) {
      let valoritem= item.getElementsByClassName('value')
      total[1] = Number(valoritem[0].innerHTML.replace(',','.'))
 
-    //  console.log(choices);
-    //  console.log(total);
+
     // teste para validar button
      if (choices[0] != undefined && choices[1] != undefined && choices[2] != undefined) {
         liberarbutton()
@@ -65,8 +66,10 @@ function selectsobremesa(item) {
     let apagarItem = document.getElementsByClassName('item')
     for (let index = 6; index < 9; index++) {
         apagarItem[index].style.boxShadow = 'none'
+        apagarItem[index].classList.add('escondido')
     }
     item.style.boxShadow = corgreen; 
+    item.classList.remove('escondido')
 
     // salvar nome do item e valor
     let nomeItems= item.getElementsByTagName('h1')
@@ -106,10 +109,14 @@ function infoCliente() {
     let nomeCliente = prompt('Por favor, informe-nos seu nome:')
     let enderecoCliente = prompt('Para finalizarmos, informe seu endereço: ')
     informsCliente= [nomeCliente,enderecoCliente]
-
+    sendOrder()
+}
+function exit() {
+    telaDeConfirmacao.style.display = 'none'
+}
+function telaVerde() {
     // passando infs pra tela de confirmação verde
     telaDeConfirmacao.style.display = 'flex'
-
     // comida
     let pedidocomida = document.querySelector('.nameprato')
     pedidocomida.innerHTML = choices[0]
@@ -130,7 +137,4 @@ function infoCliente() {
     // total
     let totalgreen = document.querySelector('.valortotal')
     totalgreen.innerHTML = precoFinal
-}
-function exit() {
-    telaDeConfirmacao.style.display = 'none'
 }
