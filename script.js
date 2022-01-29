@@ -138,5 +138,5 @@ function telaVerde() {
 
     // total
     let totalgreen = document.querySelector('.valortotal')
-    totalgreen.innerHTML = precoFinal.toString().replace('.',',')
+    totalgreen.innerHTML += precoFinal.toString().replace('.',',')
 }
