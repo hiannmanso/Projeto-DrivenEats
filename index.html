@@ -32,7 +32,7 @@
                     </div>
                     <div class="linha negrito">
                         <h2 class="total">TOTAL</h2>
-                        <h2 class="valortotal">R$</h2>
+                        <h2 class="valortotal"></h2>
                     </div>
                   
                 </div>
@@ -48,21 +48,21 @@
             <div class="choice">
                 <p>Primeiro,seu prato</p>
                 <div class="options" data-identifier="dishes" >
-                    <div class="item escondido"data-identifier="food-option" onclick="selectprato(this)">
+                    <div class="item escondido"data-identifier="food-option" onclick="selectItem(this,0,3,0)">
                         <img src="images/imagem 1.png" alt="">
                         <h1 data-identifier="food-title">Carne com batata</h1>
                         <h2>Um pouco de batata, um pouco de carne</h2>
                         <h3 data-identifier="food-price">R$ <span class='value'>14,90</span></h3>
                         <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item escondido" data-identifier="food-option" onclick="selectprato(this)">
+                    <div class="item escondido" data-identifier="food-option" onclick="selectItem(this,0,3,0)">
                         <img src="images/image 2.jpg" alt="">
                         <h1 data-identifier="food-title">Hambúrger</h1>
                         <h2>Hambúrger com fritas delicioso</h2>
                         <h3 data-identifier="food-price">R$ <span class='value'>22,28</span></h3>
                         <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item escondido"data-identifier="food-option" onclick="selectprato(this)">
+                    <div class="item escondido"data-identifier="food-option" onclick="selectItem(this,0,3,0)">
                         <img src="images/image 3.jpg" alt="">
                         <h1 data-identifier="food-title">Tacos</h1>
                         <h2>Tacos recheados, gostosinhos</h2>
@@ -75,21 +75,21 @@
             <div class="choice">
                 <p>Agora,sua bebida</p>
                 <div class="options" data-identifier="drinks">
-                    <div class="item escondido"data-identifier="food-option"  onclick="selectbebida(this)">
+                    <div class="item escondido"data-identifier="food-option"  onclick="selectItem(this, 3,6,1)">
                         <img src="images/bebida1.jpg" alt="">
                         <h1 data-identifier="food-title">Refrigerante</h1>
                         <h2>Lata 350ml</h2>
                         <h3 data-identifier="food-price">R$ <span class='value'>4,90</span></h3>
                         <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item escondido" data-identifier="food-option" onclick="selectbebida(this)">
+                    <div class="item escondido" data-identifier="food-option" onclick="selectItem(this,3,6,1)">
                         <img src="images/bebida2.jpg" alt="">
                         <h1 data-identifier="food-title">Suco 350ml</h1>
                         <h2>suquinhoo</h2>
                         <h3 data-identifier="food-price">R$ <span class='value'>5,90</span></h3>
                         <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item escondido" data-identifier="food-option" onclick="selectbebida(this)">
+                    <div class="item escondido" data-identifier="food-option" onclick="selectItem(this,3,6,1)">
                         <img src="images/bebida3.jpg" alt="">
                         <h1 data-identifier="food-title">Brahminha latão</h1>
                         <h2>haaaan brahminha</h2>
@@ -102,21 +102,21 @@
             <div class="choice">
                 <p>Por fim,sua sobremesa</p>
                 <div class="options" data-identifier="desserts">
-                    <div class="item escondido" data-identifier="food-option"onclick="selectsobremesa(this)">
+                    <div class="item escondido" data-identifier="food-option"onclick="selectItem(this,6,9,2)">
                         <img src="images/sobremesa1.png" alt="">
                         <h1 data-identifier="food-title">Pudimzin</h1>
                         <h2>Apenas pudim</h2>
                         <h3 data-identifier="food-price">R$ <span class= 'value'>7,90</span></h3>
                         <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item escondido" data-identifier="food-option" onclick="selectsobremesa(this)">
+                    <div class="item escondido" data-identifier="food-option" onclick="selectItem(this,6,9,2)">
                         <img src="images/sobremesa2.png" alt="">
                         <h1 data-identifier="food-title">Petit gateau</h1>
                         <h2>bolinho macio</h2>
                         <h3 data-identifier="food-price">R$ <span class='value'>8,10</span></h3>
                         <ion-icon  class ='icone'name="checkmark-circle"></ion-icon>
                     </div>
-                    <div class="item escondido"data-identifier="food-option" onclick="selectsobremesa(this)">
+                    <div class="item escondido"data-identifier="food-option" onclick="selectItem(this,6,9,2)">
                         <img src="images/sobremesa3.png" alt="">
                         <h1 data-identifier="food-title">Sorvetinhoo</h1>
                         <h2>melhor opção</h2>

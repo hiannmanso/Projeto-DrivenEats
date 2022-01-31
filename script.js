@@ -15,10 +15,10 @@ function liberarbutton() {
     precoFinal = (total[0]+total[1]+total[2]).toFixed(2)
 }
 
-function selectprato(item) {
+function selectItem(item, inicio,final,order) {
     // colorir a box escolhida e tirar a cor das outras
     let apagarItem = document.getElementsByClassName('item')
-    for (let index = 0; index < 3; index++) {
+    for (let index = inicio; index < final; index++) {
         apagarItem[index].style.boxShadow = 'none'
         apagarItem[index].classList.add('escondido')
     }
@@ -26,11 +26,12 @@ function selectprato(item) {
     item.classList.remove('escondido')
 
     // salvar nome do item e valor
+    
     let nomeItems= item.getElementsByTagName('h1')
-     choices[0] = nomeItems[0].innerHTML
+     choices[order] = nomeItems[0].innerHTML
 
      let valoritem= item.getElementsByClassName('value')
-     total[0] = Number(valoritem[0].innerHTML.replace(',','.'))
+     total[order] = Number(valoritem[0].innerHTML.replace(',','.'))
 
      // teste para validar button
     if (choices[0] != undefined && choices[1] != undefined && choices[2] != undefined) {
@@ -38,57 +39,6 @@ function selectprato(item) {
     }
     
 }
-
-function selectbebida(item) {
-    // colorir a box escolhida e tirar a cor das outras
-    let apagarItem = document.getElementsByClassName('item')
-    for (let index = 3; index < 6; index++) {
-        apagarItem[index].style.boxShadow = 'none'
-        apagarItem[index].classList.add('escondido')
-    }
-    item.style.boxShadow = corgreen; 
-    item.classList.remove('escondido')
-
-    // salvar nome do item e valor
-     let nomeItems= item.getElementsByTagName('h1')
-     choices[1] = nomeItems[0].innerHTML
-
-     let valoritem= item.getElementsByClassName('value')
-     total[1] = Number(valoritem[0].innerHTML.replace(',','.'))
-
-
-    // teste para validar button
-     if (choices[0] != undefined && choices[1] != undefined && choices[2] != undefined) {
-        liberarbutton()
-    }
-}
-
-function selectsobremesa(item) {
-    // colorir a box escolhida e tirar a cor das outras
-    let apagarItem = document.getElementsByClassName('item')
-    for (let index = 6; index < 9; index++) {
-        apagarItem[index].style.boxShadow = 'none'
-        apagarItem[index].classList.add('escondido')
-    }
-    item.style.boxShadow = corgreen; 
-    item.classList.remove('escondido')
-
-    // salvar nome do item e valor
-    let nomeItems= item.getElementsByTagName('h1')
-     choices[2] = nomeItems[0].innerHTML
-
-     let valoritem= item.getElementsByClassName('value')
-     total[2] = Number(valoritem[0].innerHTML.replace(',','.'))
-
-    //  console.log(total);
-    //  console.log(choices);
-
-    // teste para validar button
-     if (choices[0] != undefined && choices[1] != undefined && choices[2] != undefined) {
-        liberarbutton()
-    }
-}
-
 function sendOrder() {
    console.log(choices)
    console.log(precoFinal);
@@ -117,7 +67,15 @@ function exit() {
     telaDeConfirmacao.style.display = 'none'
 }
 function telaVerde() {
-    // passando infs pra tela de confirmação verde
+
+    if(choices[0] == undefined){
+        alert('Escolha um prato, por favor!')
+    }else if(choices[1] == undefined){
+        alert('Escolha uma bebida, por favor!')
+    }else if(choices[2] == undefined){
+        alert('Escolha uma sobremesa, por favor!')
+    }else{
+        // passando infs pra tela de confirmação verde
     telaDeConfirmacao.style.display = 'flex'
     // comida
     let pedidocomida = document.querySelector('.nameprato')
@@ -138,5 +96,6 @@ function telaVerde() {
 
     // total
     let totalgreen = document.querySelector('.valortotal')
-    totalgreen.innerHTML += precoFinal.toString().replace('.',',')
+    totalgreen.innerHTML ='R$ '+ precoFinal.toString().replace('.',',')
+    }
 }
